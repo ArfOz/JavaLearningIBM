@@ -26,7 +26,6 @@ public class RecyclingEvent implements Serializable {
     public LocalDate getDateOfRecycling(){
         return dateOfRecycling;
     }
-
     public double getEcoPoints(){
         return ecoPoints;
     }
