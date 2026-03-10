@@ -1,17 +1,16 @@
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class RecyclingEvent implements Serializable {
     private String materialType;
     private double weight;
-    private LocalDate dateOfRecycling;
+    private LocalDate date;
     private double ecoPoints;
 
-    public RecyclingEvent(String materialType, double weight, LocalDate dateOfRecycling){
+    public RecyclingEvent(String materialType, double weight){
         this.materialType = materialType;
         this.weight = weight;
-        this.dateOfRecycling = dateOfRecycling;
+        this.date = LocalDate.now();
         this.ecoPoints = weight * 10;
 
     }
@@ -23,10 +22,14 @@ public class RecyclingEvent implements Serializable {
         return weight;
     }
 
-    public LocalDate getDateOfRecycling(){
-        return dateOfRecycling;
+    public LocalDate getDate(){
+        return date;
     }
     public double getEcoPoints(){
         return ecoPoints;
+    }
+
+    public String getString(){
+        return "Date"+ this.date + "\n material type" + this.materialType + "\n weight" + this.weight + "\n ecopoints" + this.ecoPoints;
     }
 }
